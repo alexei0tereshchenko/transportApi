@@ -14,43 +14,43 @@ public class RoadSection {
         this.id = id;
     }
 
-    private List<List<RoadSection>> connectedRoadSections;
+    private List<RoadSection> connectedRoadSections;
 
-    private List<List<HashMap<RoadSection, Long>>> turnTimes;
+    private HashMap<Schedule.Weak, HashMap<Schedule.TimeInterval, HashMap<RoadSection, Long>>> turnTimes;
 
-    private List<List<Long>> passingTimes;
+    private HashMap<Schedule.Weak, HashMap<Schedule.TimeInterval, Long>> passingTimes;
 
-    private List<List<Double>> crossingRisk;
+    private HashMap<Schedule.Weak, HashMap<Schedule.TimeInterval, Double>> crossingRisk;
 
-    public List<List<RoadSection>> getConnectedRoadSections() {
+    public List<RoadSection> getConnectedRoadSections() {
         return connectedRoadSections;
     }
 
-    public void setConnectedRoadSections(List<List<RoadSection>> connectedRoadSections) {
+    public void setConnectedRoadSections(List<RoadSection> connectedRoadSections) {
         this.connectedRoadSections = connectedRoadSections;
     }
 
-    public List<List<HashMap<RoadSection, Long>>> getTurnTimes() {
+    public HashMap<Schedule.Weak, HashMap<Schedule.TimeInterval, HashMap<RoadSection, Long>>> getTurnTimes() {
         return turnTimes;
     }
 
-    public void setTurnTimes(List<List<HashMap<RoadSection, Long>>> turnTimes) {
+    public void setTurnTimes(HashMap<Schedule.Weak, HashMap<Schedule.TimeInterval, HashMap<RoadSection, Long>>> turnTimes) {
         this.turnTimes = turnTimes;
     }
 
-    public List<List<Long>> getPassingTimes() {
+    public HashMap<Schedule.Weak, HashMap<Schedule.TimeInterval, Long>> getPassingTimes() {
         return passingTimes;
     }
 
-    public void setPassingTimes(List<List<Long>> passingTimes) {
+    public void setPassingTimes(HashMap<Schedule.Weak, HashMap<Schedule.TimeInterval, Long>> passingTimes) {
         this.passingTimes = passingTimes;
     }
 
-    public List<List<Double>> getCrossingRisk() {
+    public HashMap<Schedule.Weak, HashMap<Schedule.TimeInterval, Double>> getCrossingRisk() {
         return crossingRisk;
     }
 
-    public void setCrossingRisk(List<List<Double>> crossingRisk) {
+    public void setCrossingRisk(HashMap<Schedule.Weak, HashMap<Schedule.TimeInterval, Double>> crossingRisk) {
         this.crossingRisk = crossingRisk;
     }
 }

@@ -1,8 +1,6 @@
 package model;
 
-import java.util.Calendar;
 import java.util.HashMap;
-import java.util.List;
 
 public class Bus {
 
@@ -10,7 +8,7 @@ public class Bus {
 
      private int number;
 
-     private List<List<HashMap<BusStop, Calendar>>> routes;
+     private HashMap<Schedule.Weak, HashMap<Schedule.TimeInterval, BusStop>> routes;
 
     public long getId() {
         return id;
@@ -28,11 +26,11 @@ public class Bus {
         this.number = number;
     }
 
-    public List<List<HashMap<BusStop, Calendar>>> getRoutes() {
+    public HashMap<Schedule.Weak, HashMap<Schedule.TimeInterval, BusStop>> getRoutes() {
         return routes;
     }
 
-    public void setRoutes(List<List<HashMap<BusStop, Calendar>>> routes) {
+    public void setRoutes(HashMap<Schedule.Weak, HashMap<Schedule.TimeInterval, BusStop>> routes) {
         this.routes = routes;
     }
 }

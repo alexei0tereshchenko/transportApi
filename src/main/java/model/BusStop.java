@@ -1,7 +1,6 @@
 package model;
 
 import java.util.HashMap;
-import java.util.List;
 
 public class BusStop {
 
@@ -43,15 +42,15 @@ public class BusStop {
         this.position = position;
     }
 
-    public List<HashMap<Bus, Long>> getBusSchedule() {
+    public HashMap<Schedule.Weak, HashMap<HashMap<Schedule.TimeInterval, Bus>, Integer>> getBusSchedule() {
         return busSchedule;
     }
 
-    public void setBusSchedule(List<HashMap<Bus, Long>> busSchedule) {
+    public void setBusSchedule(HashMap<Schedule.Weak, HashMap<HashMap<Schedule.TimeInterval, Bus>, Integer>> busSchedule) {
         this.busSchedule = busSchedule;
     }
 
     private RoadSection position;
 
-    private List<HashMap<Bus, Long>> busSchedule;
+    private HashMap<Schedule.Weak, HashMap<HashMap<Schedule.TimeInterval, Bus>, Integer>> busSchedule;
 }
